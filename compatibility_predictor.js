@@ -11,9 +11,13 @@ function CompatibilityPredictor(inputData){
     // get the average of each team member
     // use average to compare with applicants
     const avgTeamAttributeScale = ScaledTeamAttributes(team);
-    const applicantScore = getCompatibilityScore(applicants[0], avgTeamAttributeScale)
-    return applicantScore;
+    // const applicantScore = getCompatibilityScore(applicants[0], avgTeamAttributeScale)
+    const scoredApplicants = applicants.map(applicant => getCompatibilityScore(applicant, avgTeamAttributeScale));
+    
+    const output = {scoredApplicants};
+    const jsonOutput = JSON.stringify(output, null, 2)
+    return jsonOutput;
 }
 
 const output = CompatibilityPredictor(inputData);
-console.log(output);
+fs.writeFileSync("output_data.json", output);
