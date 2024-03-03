@@ -1,6 +1,6 @@
 # Compatibility Predictor
 
-This program is made to find the compatibility score of a list of applicants by comparing each applicant's attributes to an existing team. The score returns a value from [0,1], where the closer the score is to 0, the more compatibile the applicant is to the team. 
+This program is made to find the compatibility score of a list of applicants by comparing each applicant's attributes to an existing team. The score returns a value from [0,1], where the closer the score is to 0, the more compatible the applicant is to the team. 
 
 ## Solution
 1. The program begins by reading the contents of a JSON file, input_data.json, that contains 2 list of objects, team and applicants, then passing it into a function to where it will be parsed.
