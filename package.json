@@ -1,0 +1,12 @@
+{
+  "name": "compatibility_predictor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "compatibility_predictor.js",
+  "scripts": {
+    "start": "node compatibility_predictor.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
