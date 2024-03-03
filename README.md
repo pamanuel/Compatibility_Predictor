@@ -2,11 +2,6 @@
 
 This program is made to find the compatibility score of a list of applicants by comparing each applicant's attributes to an existing team. The score returns a value from [0,1], where the closer the score is to 0, the more compatibile the applicant is to the team. 
 
-## Run this Program
-1. Git clone this repository.
-2. Change directories into this repository's directory by typing in the terminal ```cd Compatibility_Predictor```.
-3. Run this program by typing ```npm start``` into the terminal.
-
 ## Solution
 1. The program begins by reading the contents of a JSON file, input_data.json, that contains 2 list of objects, team and applicants, then passing it into a function to where it will be parsed.
 2. The data is then split by the team and the applicants, where the team is passed into a ScaledAvgTeamAttribute function.
@@ -30,4 +25,10 @@ EX getCompatibilityScore output: ```{
     } ```
 
 6. This getCompatibilityScore function is run on each of the applicants and the returns are stored in an array of objects named scoredApplicants.
-7. Finally the scoredApplicants are converted into JSON and is then written to a JSON file, output_data.json. 
+7. Finally the scoredApplicants are converted into JSON and is then written to a JSON file, output_data.json.
+
+## Run this Program
+1. Git clone this repository.
+2. Change directories into this repository's directory by typing in the terminal ```cd Compatibility_Predictor```.
+3. Run this program by typing ```npm start``` into the terminal.
+
