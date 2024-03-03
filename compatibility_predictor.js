@@ -13,6 +13,7 @@ function CompatibilityPredictor(inputData){
     // get the average of each team member
     // use average to compare with applicants
     const avgTeamAttributeScale = ScaledAvgTeamAttributes(team);
+    console.log(avgTeamAttributeScale);
     // const applicantScore = getCompatibilityScore(applicants[0], avgTeamAttributeScale)
     //get compatibility score from each applicant and store into array
     const scoredApplicants = applicants.map(applicant => getCompatibilityScore(applicant, avgTeamAttributeScale));
@@ -20,7 +21,7 @@ function CompatibilityPredictor(inputData){
     // clean format for json file
     const output = {scoredApplicants};
     const jsonOutput = JSON.stringify(output, null, 2)
-    console.log(jsonOutput);
+    // console.log(jsonOutput);
     return jsonOutput;
 }
 
