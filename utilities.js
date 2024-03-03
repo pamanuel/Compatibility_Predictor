@@ -19,6 +19,7 @@ export function ScaledAvgTeamAttributes(team){
         //ex: intelligence = 3, total attributes = 20
         //attribute ratio = 3/20
         //then get avg amongst team members
+    
         avgTeamAttributeScale.intelligence += getAttributeRatio(memberIntelligence, totalAttributes) / teamLength;
         avgTeamAttributeScale.strength += getAttributeRatio(memberStrength, totalAttributes) / teamLength;
         avgTeamAttributeScale.endurance += getAttributeRatio(memberEndurance, totalAttributes) / teamLength;
@@ -40,7 +41,6 @@ export function getCompatibilityScore(applicant, avgTeamAttributeScale){
     // finds the distance between the applicants attributes and the teams avg
 
     Object.keys(applicant.attributes).forEach(attribute => {
-        
         const attributeRatio = applicant.attributes[attribute] / totalApplicantAttribute;
         score += Math.abs(attributeRatio - avgTeamAttributeScale[attribute]);
         numAttributes++;
