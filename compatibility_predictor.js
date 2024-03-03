@@ -1,5 +1,5 @@
 import fs from 'fs';
-import { ScaledTeamAttributes } from './utilities.js'
+import { ScaledTeamAttributes, getCompatibilityScore } from './utilities.js'
 const inputData = JSON.parse(fs.readFileSync('input_data.json','utf8'));
 function CompatibilityPredictor(inputData){
     const team = inputData.team;
@@ -11,7 +11,8 @@ function CompatibilityPredictor(inputData){
     // get the average of each team member
     // use average to compare with applicants
     const avgTeamAttributeScale = ScaledTeamAttributes(team);
-    return avgTeamAttributeScale;
+    const applicantScore = getCompatibilityScore(applicants[0], avgTeamAttributeScale)
+    return applicantScore;
 }
 
 const output = CompatibilityPredictor(inputData);
