@@ -21,7 +21,7 @@ function CompatibilityPredictor(inputData){
     // clean format for json file
     const output = {scoredApplicants};
     const jsonOutput = JSON.stringify(output, null, 2)
-    // console.log(jsonOutput);
+    console.log(jsonOutput);
     return jsonOutput;
 }
 
