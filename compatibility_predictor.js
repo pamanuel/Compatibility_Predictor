@@ -10,8 +10,8 @@ function CompatibilityPredictor(inputData){
     // Use the team attributes to scale down
     // get the average of each team member
     // use average to compare with applicants
-    const avgScaledAttributes = ScaledTeamAttributes(team);
-    return avgScaledAttributes;
+    const avgTeamAttributeScale = ScaledTeamAttributes(team);
+    return avgTeamAttributeScale;
 }
 
 const output = CompatibilityPredictor(inputData);
