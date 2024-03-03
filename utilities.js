@@ -1,4 +1,4 @@
-export function ScaledTeamAttributes(team){
+export function ScaledAvgTeamAttributes(team){
     // initialize team attribute scale
     const avgTeamAttributeScale = {
         intelligence: 0,
