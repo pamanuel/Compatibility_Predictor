@@ -16,8 +16,15 @@ export function ScaledTeamAttributes(team){
         const memberEndurance = member.attributes.endurance;
         const memberSpicyFoodTolerance = member.attributes.spicyFoodTolerance;
 
+        avgTeamAttributeScale.intelligence += getAttributeRatio(memberIntelligence, totalAttributes) / teamLength;
+        avgTeamAttributeScale.strength += getAttributeRatio(memberStrength, totalAttributes) / teamLength;
+        avgTeamAttributeScale.endurance += getAttributeRatio(memberEndurance, totalAttributes) / teamLength;
+        avgTeamAttributeScale.spicyFoodTolerance += getAttributeRatio(memberSpicyFoodTolerance, totalAttributes) / teamLength;
     });
-    return "hello world";
+    
+    // sum of avgTeamAttributeScale should be 1
+    console.log(avgTeamAttributeScale.intelligence + avgTeamAttributeScale.strength + avgTeamAttributeScale.endurance + avgTeamAttributeScale.spicyFoodTolerance);
+    return avgTeamAttributeScale;
 }
 
 // returns the sum of all attributes of a member
@@ -25,4 +32,8 @@ function getTotalAttributes(member){
     const attributeValue = Object.values(member.attributes);
     const totalAttributes = attributeValue.reduce((sum, attribute) => sum + attribute, 0);
     return totalAttributes;
+}
+
+function getAttributeRatio(attribute,totalAttributes){
+    return attribute / totalAttributes;
 }
